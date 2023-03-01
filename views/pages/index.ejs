@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<h1>Hi there, <%= `${user.firstName} ${user.lastName}` %></h1>
+<% if (user.admin) { %>
+<h3>Admin Supplies list</h3>
+<ul>
+  <% for (let i = 0; i < supplies.admin.length; i++) { %>
+  <li><%= supplies.admin[i] %></li>
+  <% } %>
+</ul>
+<% } else { %>
+<h3>Supplies list</h3>
+<ul>
+  <% for (let i = 0; i < supplies.regular.length; i++) { %>
+  <li><%= supplies.regular[i] %></li>
+  <% } %>
+</ul>
+<% } %>
+<%- include('../partials/footer') %>
